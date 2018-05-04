@@ -175,3 +175,14 @@ To https://github.com/gr0und-s3ct0r/niet.git
 Or manually directly from github:
 * Include examples, outputs, etc... whenever possible.
 * Include screenshots and animated GIFs in your pull request whenever possible.
+
+## Special cases
+
+### Generate manpages
+
+For generate man-pages for niet read the following instructions:
+```shell
+$ cd docs
+$ make man
+$ man --local-file _build/man/niet.1
+```

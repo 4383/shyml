@@ -8,3 +8,4 @@ dist/
 *.swa
 *.swp
 *~
+docs/_build/
