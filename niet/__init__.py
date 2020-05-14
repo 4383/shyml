@@ -6,6 +6,7 @@ import sys
 from jmespath import search
 from jmespath.exceptions import LexerError
 
+import niet.actions as actions
 import niet.output as output
 
 import pkg_resources
@@ -77,6 +78,9 @@ def argparser():
     parser.add_argument('-o', '--output', type=str, metavar="OUTPUT_FILE",
                         help="Print output in a file instead of stdout \
                         (surcharged by in-place parameter if set)")
+    parser.add_argument('-d', '--del', dest='delete', action='append',
+                        type=str, metavar=".path.to.object",
+                        help="Delete the object)")
     parser.add_argument('-s', '--silent', action='store_true',
                         help="silent mode, doesn't display message when \
                         element was not found")
@@ -170,6 +174,7 @@ def main():
     search = args.object
     dataset = get_data(infile)
     infile.close()
+    to_delete = args.delete
     out_format = args.format
     out_file = args.output
     silent = args.silent
@@ -178,5 +183,8 @@ def main():
 
     if args.in_place and infilename:
         out_file = infilename
+
+    if to_delete:
+        result = actions.delete(result, to_delete)
 
     print_result(result, out_format, in_format, search, out_file)
