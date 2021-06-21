@@ -7,7 +7,18 @@
 [![Downloads](https://pepy.tech/badge/niet)](https://pepy.tech/project/niet)
 [![Downloads](https://pepy.tech/badge/niet/month)](https://pepy.tech/project/niet/month)
 
-Get data from yaml file directly in your shell
+Get data from YAML file directly in your shell.
+
+> How to easily parse and retrieve data from YAML file in our shell?
+
+A few years ago the previous question led us to develop niet.
+
+Indeed, at that time we needed a way to retrieve data for our own needs and
+so we created niet. The goal was to develop a tools that will allow us to
+standardize how we parse YAML locally or in our CI pipelines. We wanted
+something reusable and easily distribuable.
+
+Niet was born.
 
 Niet is like [xmllint](http://xmlsoft.org/xmllint.html) or
 [jq](https://stedolan.github.io/jq/) but for YAML and JSON data -
